@@ -1,0 +1,13 @@
+# General ignores
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+*.old
+
+# Ignore Python virtual environments
+venv/
+__pycache__/
+*/__pycache__/
+*.pyc
