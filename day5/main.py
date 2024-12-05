@@ -33,4 +33,21 @@ def p1():
     print(result)
 
 
-p1()
+def p2():
+    global page_order_dict, updates
+    
+    result = 0
+    for line in updates:
+        valid = True
+        for i, n in enumerate(line):
+            if n in page_order_dict:
+                if any(m in page_order_dict[n] for m in line[:i]):
+                    valid = False
+                    break
+        if not valid:
+            filter = {i: set(page_order_dict[i]) & set(line) for i in line if i in page_order_dict}        
+            result += sorted(filter, key=lambda k: len(filter[k]), reverse=True)[len(line) // 2]
+    
+    print(result)
+
+p2()
