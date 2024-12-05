@@ -15,18 +15,12 @@ def p1():
     result = 0
 
     for line in updates:
-        tmp, tmp2 = [], []
         valid = True
         for i, n in enumerate(line):
             if n in page_order_dict:
-                if any(m in page_order_dict[n] for m in tmp):
+                if any(m in page_order_dict[n] for m in line[:i]):
                     valid = False
                     break
-                tmp.append(n)
-            tmp2.extend(key for key in page_order_dict if n in page_order_dict[key])
-            if any(key in line[i:] for key in tmp2):
-                valid = False
-                break
         if valid:
             result += line[len(line) // 2]
 
@@ -50,4 +44,4 @@ def p2():
     
     print(result)
 
-p2()
+p1()
