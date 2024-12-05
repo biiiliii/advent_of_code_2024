@@ -1,17 +1,18 @@
-with open("input.txt") as f:
-    leftcol, rightcol = zip(*[map(int, line.split()) for line in f])
+from utils.solutionBase import SolutionBase
 
-def p1():
-    global leftcol, rightcol
-    leftcol = sorted(leftcol)
-    rightcol = sorted(rightcol)
-    result = sum(abs(l - r) for l, r in zip(leftcol, rightcol))
-    print(result)
+class solution(SolutionBase):
+	def __init__(self, day: int, part: int):
+		self.day = day
+		self.part = part
+		with open("day1/input.txt") as f:
+			self.leftcol, self.rightcol = zip(*[map(int, line.split()) for line in f])
 
-def p2():
-    global leftcol, rightcol
-    result = sum(n * rightcol.count(n) for n in leftcol)
-    print(result)
+	def p1(self):
+		self.leftcol = sorted(self.leftcol)
+		self.rightcol = sorted(self.rightcol)
+		result = sum(abs(l - r) for l, r in zip(self.leftcol, self.rightcol))
+		print(result)
 
-p1()
-p2()
+	def p2(self):
+		result = sum(n * self.rightcol.count(n) for n in self.leftcol)
+		print(result)
