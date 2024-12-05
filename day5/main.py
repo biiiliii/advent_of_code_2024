@@ -39,9 +39,10 @@ def p2():
                     valid = False
                     break
         if not valid:
-            filter = {i: set(page_order_dict[i]) & set(line) for i in line if i in page_order_dict}        
+            filter = {i: set(page_order_dict[i]) & set(line) for i in line}        
             result += sorted(filter, key=lambda k: len(filter[k]), reverse=True)[len(line) // 2]
     
     print(result)
 
 p1()
+p2()
