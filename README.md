@@ -43,8 +43,8 @@ To run the solutions, you need to have a compatible programming environment set 
     ```
     Replace `<day>` with the day number and `<part>` with 1 or 2 depending on the challenge part you want to solve.
 
-### Note
-Each user may have different inputs for the challenges. Make sure to use your specific input files provided by the Advent of Code website. You can place your input files in the appropriate directory as specified by the project structure.
+> [!NOTE]
+> Each user may have different inputs for the challenges. Make sure to use your specific input files provided by the Advent of Code website. You can place your input files in the appropriate directory as specified by the project structure.
 
 ## Contributing
 
