@@ -7,9 +7,7 @@ def main():
 
     args = parser.parse_args()
 
-    print(f"Day: {args.day}, Part: {args.part}")
     solution = importlib.import_module(f"day{args.day}.main").solution(args.day, args.part)
-    print(args.part)
     solution.solve()
     
 if __name__ == "__main__":

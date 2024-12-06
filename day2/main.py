@@ -1,9 +1,9 @@
 from utils.solutionBase import SolutionBase
 
 class solution(SolutionBase):
-	def __init__(self):
-		with open("input.txt") as f:
-			self.data = [list(map(int, line.split())) for line in f]
+	
+	with open("day2/input.txt") as f:
+		data = [list(map(int, line.split())) for line in f]
 
 	def p1(self):
 		safe_count = 0
