@@ -10,9 +10,9 @@ class SolutionBase:
 
 	def solve(self):
 		if self.part == 1:
-			self.p1()
+			print("Solution for part 1:", self.p1())
 		elif self.part == 2:
-			self.p2()
+			print("Solution for part 2:", self.p2())
 		elif self.part == None:
-			self.p1()
-			self.p2()
+			print("Solution for part 1:", self.p1())
+			print("Solution for part 2:", self.p2())

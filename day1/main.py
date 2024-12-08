@@ -8,8 +8,8 @@ class solution(SolutionBase):
 		self.leftcol = sorted(self.leftcol)
 		self.rightcol = sorted(self.rightcol)
 		result = sum(abs(l - r) for l, r in zip(self.leftcol, self.rightcol))
-		print(result)
+		return result
 
 	def p2(self):
 		result = sum(n * self.rightcol.count(n) for n in self.leftcol)
-		print(result)
+		return result

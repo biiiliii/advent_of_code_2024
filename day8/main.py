@@ -62,7 +62,7 @@ class solution(SolutionBase):
                         if  0 <= antinode[0] < rows and 0 <= antinode[1] < cols:
                             antinodes.add(antinode)
     
-        print(len(antinodes))
+        return len(antinodes)
         
         
                     
@@ -87,4 +87,4 @@ class solution(SolutionBase):
                             if  0 <= antinode[0] < rows and 0 <= antinode[1] < cols:
                                 antinodes.add(antinode)
     
-        print(len(antinodes))
+        return len(antinodes)

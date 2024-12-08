@@ -62,7 +62,7 @@ class solution(SolutionBase):
                     counter += key
                     break
                     
-        print(counter)
+        return counter
     
     def p2(self):
         counter = 0
@@ -84,5 +84,5 @@ class solution(SolutionBase):
                 if self.eval_left_to_right(expression, key) == key:
                     counter += key
                     break
-        print(counter)
+        return counter
     

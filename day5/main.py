@@ -26,7 +26,7 @@ class solution(SolutionBase):
                         break
             if valid:
                 result += line[len(line) // 2]
-        print(result)
+        return result
 
     def p2(self):
         result = 0
@@ -40,5 +40,5 @@ class solution(SolutionBase):
             if not valid:
                 filter = {i: set(self.page_order_dict[i]) & set(line) for i in line}
                 result += sorted(filter, key=lambda k: len(filter[k]), reverse=True)[len(line) // 2]
-        print(result)
+        return result
 

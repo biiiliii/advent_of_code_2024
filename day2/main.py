@@ -11,7 +11,7 @@ class solution(SolutionBase):
 			if sorted(lst) == lst or sorted(lst, reverse=True) == lst:
 				if all(1 <= abs(a - b) <= 3 for a, b in zip(lst, lst[1:])):
 					safe_count += 1 
-		print(safe_count)
+		return safe_count
 
 	def p2(self):
 		safe_count = 0
@@ -28,6 +28,6 @@ class solution(SolutionBase):
 						all(1 <= abs(a - b) <= 3 for a, b in zip(new_lst, new_lst[1:])):
 						safe_count += 1
 						break
-		print(safe_count)
+		return safe_count
 
 	

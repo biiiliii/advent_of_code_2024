@@ -50,7 +50,7 @@ class solution(SolutionBase):
 
     def p1(self):
         self.data = self.data_backup.copy()
-        print(len(self.patrol(self.data)[1]))
+        return len(self.patrol(self.data)[1])
 
     def p2(self):
         map = [list(row) for row in self.data_backup]
@@ -69,4 +69,4 @@ class solution(SolutionBase):
             if not self.patrol(copy, pos, idx)[0]:
                 count += 1
 
-        print(count)
+        return count

@@ -25,7 +25,7 @@ class solution(SolutionBase):
                 diagonal = "".join([self.data[i - k][j + k] for k in range(4)])
                 comptador += diagonal.count("XMAS")
                 comptador += diagonal[::-1].count("XMAS")
-        print(comptador)
+        return comptador
 
     def p2(self):
         f, c = len(self.data), len(self.data[0])
@@ -39,4 +39,4 @@ class solution(SolutionBase):
                     if (diagonal_left.count("MAS") + diagonal_left[::-1].count("MAS")) and (diagonal_right.count("MAS") + diagonal_right[::-1].count("MAS")):
                         comptador += 1
 
-        print(comptador)
+        return comptador

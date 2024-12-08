@@ -14,7 +14,7 @@ class solution(SolutionBase):
 					if temp_data[0].isdigit() and temp_data[1].isdigit():
 						result += int(temp_data[0]) * int(temp_data[1])
 			used_data = used_data[1:]
-		print(result)
+		return result
 
 	def p2(self):
 		used_data = self.data
@@ -33,5 +33,5 @@ class solution(SolutionBase):
 						if temp_data[0].isdigit() and temp_data[1].isdigit():
 							result += int(temp_data[0]) * int(temp_data[1])
 			used_data = used_data[1:]
-		print(result)
+		return result
 
