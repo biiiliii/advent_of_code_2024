@@ -4,9 +4,9 @@ class solution(SolutionBase):
     data_backup = [line.strip() for line in open("day6/input.txt").readlines()]
 
     def get_guard_position(self):
-        for i in range(len(self.data)):
-            for j in range(len(self.data[i])):
-                if self.data[i][j] not in ['#', '.', 'X']:
+        for i in range(len(self.data_backup)):
+            for j in range(len(self.data_backup[i])):
+                if self.data_backup[i][j] not in ['#', '.', 'X']:
                     return (i, j)
 
     def count_visited(self):
