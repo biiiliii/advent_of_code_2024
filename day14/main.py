@@ -35,4 +35,30 @@ class solution(SolutionBase):
 
         return tl * bl * tr * br
     
-    
+
+    """
+    DISCLAIMER:
+    I don't know if this solves the problem for all cases, but it worked for me.
+
+    Instead of trying to find the image, i just checked if, at some points, no robots were in the same position.
+    """
+    def p2(self):
+        WIDTH = 101
+        HEIGHT = 103
+
+        for second in range(WIDTH * HEIGHT):
+            result = []
+            for px, py, vx, vy in self.robots:
+                result.append(((px + vx * second)%WIDTH, (py + vy * second)%HEIGHT))
+            if len(set(result)) == len(result):
+                
+                """for i in range(HEIGHT):
+                    for j in range(WIDTH):
+                        if (j, i) in result:
+                            print("#", end="")
+                        else:
+                            print(".", end="")
+                    print()"""
+                
+                return second
+        
