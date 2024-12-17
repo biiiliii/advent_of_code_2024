@@ -43,22 +43,20 @@ class solution(SolutionBase):
             
             instruction_pointer += 2
         
-        print(f"Register A: {rA}, Register B: {rB}, Register C: {rC}")
         return ",".join(value)
     
     def find(self, program, ans):
         if program == []: return ans
         for t in range(8):
-            a = ans << 3 | t
+            a = (ans << 3) | t
             b = a % 8
             b = b ^ 2
             c = a >> b
             b = b ^ 7
             b = b ^ c
-            a = a >> 3
             if b % 8 == program[-1]:
                 sub = self.find(program[:-1], a)
-                if sub != None: continue
+                if sub is None: continue
                 return sub
 
     def p2(self):
@@ -74,9 +72,36 @@ class solution(SolutionBase):
         c = a >> b --> # 7,5
         b = b ^ 7 --> # 1,7
         b = b ^ c --> # 4,4
-        a = a >> 3 --> # 0,3
+        a = a * 2^3 --> # 0,3
         # output b % 8 --> # 5,5
         if a != 0: pointer = 0 --> # 3,0
-        """
 
+
+        b = a % 8 --> # 2,4 --> b = 7
+        # b will always be a number between 0 and 7
+
+        b = b ^ 2  --> # 1,2 --> b = 5
+        # b will always be a number between 0 and 7
+
+        c = a >> b --> # 7,5 --> c = 1301377
+
+        b = b ^ 7 --> # 1,7 --> b = 2
+        # same as saying 7 - b since b will always be 0-7
+
+        b = b ^ c --> # 4,4 --> b = 1301379
+
+
+        a = a << 3 --> # 0,3
+
+        # output b % 8 --> # 5,5
+        # OUTPUT 3
+
+        if a != 0: pointer = 0 --> # 3,0
+        """
+        
+        print("\n\n=-=-=-= DISCLAIMER =-=-=-=\n\n")
+        print("The following code is a result of reverse engineering the program.")
+        print("Since I reverse enginireed my own input, it will probably not work for other inputs.")
+        print("Feel free to adapt the code to your own input anyways!")
+        print("\n\n=-=-=-= END OF DISCLAIMER =-=-=-=\n\n")
         return self.find(program, 0)
